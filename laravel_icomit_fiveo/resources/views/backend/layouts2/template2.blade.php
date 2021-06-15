@@ -52,6 +52,8 @@
     @include ('backend/layouts2/sidebar2')
 
     @yield('content')
+
+    @include ('backend/layouts2/footer2')
     <!-- container section start -->
 
     <!-- javascripts -->

@@ -7,14 +7,14 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function profile()
     {
-        return view('backend.layouts2.profile');
+        return view('backend.layouts2.profile_komunitas.profile');
     }
     public function create()
     {
         $profile_kom = null;
-        return view('backend.layouts2.profile_komunitas.create' , compact('profile_komunitas'));
+        return view('backend.layouts2.profile_komunitas.create_profile' , compact('profile_kom'));
     }
 
     public function store(Request $request)

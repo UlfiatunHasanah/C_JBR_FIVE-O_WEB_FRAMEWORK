@@ -10,7 +10,7 @@
                    </a>
                </li>
                <li>
-                   <a class="" href="{{url('profile_komunitas')}}">
+                   <a class="" href="{{url('adminkom/profile_komunitas')}}">
                        <i class="fas fa-id-card"></i>
                        <span>Profile Komunitas</span>
                    </a>

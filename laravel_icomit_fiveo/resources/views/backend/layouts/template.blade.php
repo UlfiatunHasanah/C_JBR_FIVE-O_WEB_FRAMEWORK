@@ -53,6 +53,8 @@
 
     @yield('content')
 
+    @include ('backend/layouts/footer')
+
     <!-- javascripts -->
     <script src="{{ asset('backend/js/jquery.js') }}"></script>
     <script src="{{ asset('backend/js/jquery-ui-1.10.4.min.js') }}"></script>
