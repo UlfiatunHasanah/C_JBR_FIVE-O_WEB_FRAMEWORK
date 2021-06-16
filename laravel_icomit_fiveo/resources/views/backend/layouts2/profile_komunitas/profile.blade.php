@@ -30,9 +30,44 @@
                   <p>{{ $message }}</p>
               </div>
               @endif
-  
               <a href="{{ url ('adminkom/profile_komunitas/create') }}"><button class="btn btn-primary"
                   type="button"><i class="fa fa-plus">  Tambah </i></button></a>
+
+                  <br> <br>
+                        <table class="table table-striped table-advance table hover">
+                            <tbody>
+                                <tr>
+                                    <th><i class="icon_key"></i> Id Komunitas</th>
+                                    <th><i class="icon_document"></i> Nama Komunitas</th>
+                                    <th><i class="fas fa-map-marker-alt"></i> Provinsi</th>
+                                    <th><i class="fas fa-map-marker-alt"></i> Kabupaten/Kota</th>
+                                    <th><i class="fas fa-user"></i> Jumlah Anggota</th>
+                                    <th><i class="fas fa-phone"></i> No. WA</th>
+                                    <th><i class="fas fa-image"></i> Logo Komunitas</th>
+                                    <th><i class="icon_cogs"></i> Action</th>
+                                </tr>
+                                    @foreach ($profile_kom as $item)
+                                        <tr>
+                                            <td>{{$item->id_kom}}</td>
+                                            <td>{{$item->nama_kom}}</td>
+                                            <td>{{$item->id_prov}}</td>
+                                            <td>{{$item->id_kota}}</td>
+                                            <td>{{$item->jml_anggota}}</td>
+                                            <td>{{$item->no_wa}}</td>
+                                            <td>{{$item->logo_kom}}</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a class="btn btn-warning" href="">
+                                                    {{-- <a class="btn btn-warning" href="{{ route('pengalaman_kerja.edit', $item->id_prov)}}"> --}}
+                                                        <i class="fa fa-edit"></i></a> 
+                                                        <button type="submit" class="btn btn-danger">
+                                                    <i class="fa fa-trash-o"></i></button>
+                                            </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                        </table>
               </div>
         </section>
         </div>

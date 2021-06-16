@@ -9,7 +9,8 @@ class ProfileController extends Controller
 {
     public function profile()
     {
-        return view('backend.layouts2.profile_komunitas.profile');
+        $profile_kom = DB::table('profile_kom')->get();
+        return view('backend.layouts2.profile_komunitas.profile', compact('profile_kom'));
     }
     public function create()
     {
@@ -19,6 +20,11 @@ class ProfileController extends Controller
 
     public function store(Request $request)
     {
+        //tujuan file
+        $photo = $request->file('logo_kom')->getClientOriginalName();
+        $destination = base_path() . '/public/data_komunitas';
+        $request->file('logo_kom')->move($destination, $photo);
+        
         DB::table('profile_kom') ->insert([
             'nama_kom' => $request ->namakom,
             'id_prov' => $request ->namaprov,
@@ -26,9 +32,10 @@ class ProfileController extends Controller
             'th_berdiri' => $request ->thnberdiri,
             'jml_anggota' => $request ->jmlanggota,
             'no_wa' => $request ->nowa,
-            'instagram' => $request ->ig,
+            'instagram' => $request ->instagram,
             'desc_kom' => $request ->desckom,
-            'logo_kom' => $request ->logokom,
+            'logo_kom' => $photo,
+            'id_admin_kom' => 1,
         ]);
 
         return redirect()->route('profile_komunitas.profile')

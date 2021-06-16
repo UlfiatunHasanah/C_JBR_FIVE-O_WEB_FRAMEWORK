@@ -37,7 +37,7 @@
                         <div class="panel-body">
                             <div class="form">
                                 <form class="form-validate form-horizontal" id="profile_komunitas_form" method="POST"
-                                            action="{{ url ('adminkom/profile/store')}}">
+                                            action="{{ route ('profile.store')}}" enctype="multipart/form-data">
                                             {!! csrf_field() !!}
                                     <div class="form-group">
                                         <label for="cname" class="control-label col-lg-2">Nama Komunitas <span class="required">*</span></label>
@@ -96,13 +96,11 @@
                                                 @endforeach
                                             </div>
                                         @endif
-                                        <form action="/upload/proses" method="POST" enctype="multipart/form-data">
-                                            {{  csrf_field() }}
+                                           
                                             <div class="form-group">
                                                 <b>File Gambar</b><br/>
                                                 <input type="file" name="logo_kom"> <br/>
                                             </div>
-                                        </form>
                                     </div> <br><br><br>
 
                                     <div class="form-group">

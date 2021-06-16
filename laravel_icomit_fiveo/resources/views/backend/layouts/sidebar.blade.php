@@ -17,10 +17,10 @@
                    </a>
                    <ul class="sub">
                        <li><a class="" href="{{url('adminweb/provinsi')}}">Provinsi</a></li>
-                       <li><a class="" href="form_validation.html">Kabupaten/Kota</a></li>
+                       <li><a class="" href="{{url('adminweb/kabkot')}}">Kabupaten/Kota</a></li>
                    </ul>
                <li>
-                   <a class="" href="widgets.html">
+                   <a class="" href="{{url('adminweb/datakom')}}">
                        <i class="fas fa-poll-h"></i>
                        <span>Data Komunitas</span>
                    </a>
@@ -33,7 +33,6 @@
                        <span class="menu-arrow arrow_carrot-right"></span>
                    </a>
                    <ul class="sub">
-                       <li><a class="" href="general.html">Akun User Public</a></li>
                        <li><a class="" href="buttons.html">Akun Admin Komunitas</a></li>
                        <li><a class="" href="grids.html">Akun Admin Website</a></li>
                    </ul>

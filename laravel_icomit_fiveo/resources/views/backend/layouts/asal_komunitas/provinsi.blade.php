@@ -34,20 +34,22 @@
                         <table class="table table-striped table-advance table hover">
                             <tbody>
                                 <tr>
-                                    <th><i class="icon_bag"></i> Kode Provinsi</th>
+                                    <th><i class="icon_key"></i> Kode Provinsi</th>
                                     <th><i class="icon_document"></i> Nama Provinsi</th>
                                     <th><i class="icon_cogs"></i> Action</th>
                                 </tr>
                                     @foreach ($provinsi as $item)
                                         <tr>
-                                            <td>{{$item->idprov}}</td>
-                                            <td>{{$item->namaprov}}</td>
+                                            <td>{{$item->id_prov}}</td>
+                                            <td>{{$item->nama_prov}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a class="btn btn-warning">
-                                                    <button type="submit" class="btn btn-danger">
+                                                    <a class="btn btn-warning" href="">
+                                                    {{-- <a class="btn btn-warning" href="{{ route('pengalaman_kerja.edit', $item->id_prov)}}"> --}}
+                                                        <i class="fa fa-edit"></i></a> 
+                                                        <button type="submit" class="btn btn-danger">
                                                     <i class="fa fa-trash-o"></i></button>
-                                                </div>
+                                            </div>
                                             </td>
                                         </tr>
                                     @endforeach
