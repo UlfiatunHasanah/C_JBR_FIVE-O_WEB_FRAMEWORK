@@ -57,6 +57,7 @@
                     cari!</h3>
             </div>
 
+            <center>
             <div class="container">
                 <div class="row">
                     <div class="form-group mb-2">
@@ -68,19 +69,24 @@
                     </div>
                 </div>
                 </div>
+            </center>
 
+                <center>
                 <div class="row">
                     <div class="form-group mb-3">
                     <div class="col-6">
                         <select name="select" class="form-control select2">
-                            <option value="1"> -- Pilih Kabupaten/Kota --</option>
+                            <option value="1">-- Pilih Kabupaten/Kota --</option>
                             <option value="2"> Provinsi Aceh</option>
                         </select>
                     </div>
                 </div>
                 </div>
+                </center>
 
-                <button type='button' class='btn btn-primary center-block'> Cari</button>
+
+                <center><button type='button' class='btn btn-primary center-block'> Cari</button></center>
+
             </div>
     </section>
     <!-- About-->
