@@ -44,10 +44,13 @@
                                             <td>{{$item->nama_prov}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a class="btn btn-warning" href="">
-                                                    {{-- <a class="btn btn-warning" href="{{ route('pengalaman_kerja.edit', $item->id_prov)}}"> --}}
+                                                    <form action="{{ route('provinsi.destroy', $item->id_prov)}}" method="POST">
+                                                    <a class="btn btn-warning" href="{{ route('provinsi.edit', $item->id_prov)}}">
                                                         <i class="fa fa-edit"></i></a> 
-                                                        <button type="submit" class="btn btn-danger">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button type="submit" class="btn btn-danger"
+                                                        onclick="return confirm ('Apakah anda yakin ingin menghapus data ini ?')">
                                                     <i class="fa fa-trash-o"></i></button>
                                             </div>
                                             </td>

@@ -37,22 +37,24 @@
                     <div class="panel-body">
                         <div class="form">
                             <form class="form-validate form-horizontal" id="data_provinsi_form" method="POST"
-                            action="{{ url ('adminweb/provinsi/store')}}">
+                            action="{{isset ($provinsi) ? route ('provinsi.update', $provinsi->id_prov) : 
+                            url ('adminweb/provinsi/store')}}" enctype="multipart/form-data">
                             {!! csrf_field() !!}
+                            {!! isset($provinsi) ? method_field('PUT') : ''!!}
                             <div class="form-group">
                             <label for="cname" class="control-label col-lg-2">Kode Provinsi<span
                                 class="required">*</span></label>
                             <div class="col-lg-10">
-                                <input class="form-control" id="idprov" name="idprov" minlength="5" type="text"
-                                required/>
+                                <input class="form-control" id="id_prov" name="id_prov" minlength="5" type="text"
+                                value="{{ isset($provinsi) ? $provinsi->id_prov : ''}}" required/>
                             </div>
                             </div>
                             <div class="form-group">
                             <label for="cname" class="control-label col-lg-2"> Nama Provinsi <span
                                 class="required">*</span></label>
                             <div class="col-lg-10">
-                                <input class="form-control" id="namaprov" name="namaprov" minlength="2" type="text"
-                                required/>
+                                <input class="form-control" id="nama_prov" name="nama_prov" minlength="2" type="text"
+                                value="{{ isset($provinsi) ? $provinsi->nama_prov : ''}}" required/>
                             </div>
                             </div>
                             <div class="form-group">

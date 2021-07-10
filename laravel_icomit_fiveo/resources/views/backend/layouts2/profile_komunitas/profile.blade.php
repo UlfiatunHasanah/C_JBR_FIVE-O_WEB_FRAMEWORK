@@ -57,8 +57,7 @@
                                             <td>{{$item->logo_kom}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a class="btn btn-warning" href="">
-                                                    {{-- <a class="btn btn-warning" href="{{ route('pengalaman_kerja.edit', $item->id_prov)}}"> --}}
+                                                    <a class="btn btn-warning" href="{{ route('profile_komunitas.edit', $item->id_kom)}}">
                                                         <i class="fa fa-edit"></i></a> 
                                                         <button type="submit" class="btn btn-danger">
                                                     <i class="fa fa-trash-o"></i></button>

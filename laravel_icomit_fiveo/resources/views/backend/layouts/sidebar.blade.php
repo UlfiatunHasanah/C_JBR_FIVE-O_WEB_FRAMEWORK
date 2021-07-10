@@ -4,7 +4,7 @@
            <!-- sidebar menu start-->
            <ul class="sidebar-menu">
                <li class="active">
-                   <a class="" href="index.html">
+                   <a class="" href="{{url('adminweb')}}">
                        <i class="icon_house_alt"></i>
                        <span>Dashboard</span>
                    </a>
@@ -33,7 +33,7 @@
                        <span class="menu-arrow arrow_carrot-right"></span>
                    </a>
                    <ul class="sub">
-                       <li><a class="" href="buttons.html">Akun Admin Komunitas</a></li>
+                       <li><a class="" href="{{route('admink')}}">Akun Admin Komunitas</a></li>
                        <li><a class="" href="grids.html">Akun Admin Website</a></li>
                    </ul>
                </li>

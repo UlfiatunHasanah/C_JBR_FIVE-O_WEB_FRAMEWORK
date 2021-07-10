@@ -3,12 +3,15 @@ namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
+
     public function adminweb()
     {
-        return view('backend.layouts.template');
+        $dashboard = DB::table('profile_kom')->get();
+        return view('backend.layouts.dashboard' , compact('dashboard'));
     }
 
     public function adminkom()

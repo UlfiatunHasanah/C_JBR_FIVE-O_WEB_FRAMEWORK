@@ -35,19 +35,24 @@
                             <tbody>
                                 <tr>
                                     <th><i class="icon_key"></i> Kode Kabupaten/Kota</th>
+                                    <th><i class="icon_document"></i> Nama Provinsi</th>
                                     <th><i class="icon_document"></i> Nama Kabupaten/Kota</th>
                                     <th><i class="icon_cogs"></i> Action</th>
                                 </tr>
-                                    @foreach ($kab_kot as $item)
+                                    @foreach ($kab_kota as $item)
                                         <tr>
                                             <td>{{$item->id_kabkot}}</td>
+                                            <td>{{$item->id_prov}}</td>
                                             <td>{{$item->nama_kab_kota}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a class="btn btn-warning" href="">
-                                                     {{-- <a class="btn btn-warning" href="{{ route('pengalaman_kerja.edit', $item->id_prov)}}"> --}}
+                                                    <form action="{{route ('kabkot.destroy', $item->id_kabkot)}}" method="POST">
+                                                    <a class="btn btn-warning" href="{ route('kabkot.edit', $item->id_kabkot)}}">
                                                         <i class="fa fa-edit"></i></a> 
-                                                        <button type="submit" class="btn btn-danger">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button type="submit" class="btn btn-danger"
+                                                        onclick="return confirm ('Apakah anda yakin ingin menghapus data ini ?')">
                                                     <i class="fa fa-trash-o"></i></button>
                                             </div>
                                             </td>

@@ -37,24 +37,36 @@
                     <div class="panel-body">
                         <div class="form">
                             <form class="form-validate form-horizontal" id="data_komunitas_form" method="POST"
-                            action="{{ url ('adminweb/datakom/store')}}" enctype="multipart/form-data">
+                            ction="{{isset ($data_kom) ? route ('datakom.update', $data_kom->id_kom) : 
+                            url ('adminweb/datakom/store')}}" enctype="multipart/form-data">
                             {!! csrf_field() !!}
+                            {!! isset($data_kom) ? method_field('PUT') : ''!!}
+                            <div class="form-group">
+                                <label for="cname" class="control-label col-lg-2">Id Admin Komunitas<span class="required">*</span></label>
+                                <div class="col-lg-10">
+                                    <input class="form-control" id="id_admin_kom" name="id_admin_kom" minlength="5" type="text" 
+                                    value="{{ isset($data_kom) ? $data_kom->id_admin_kom : ''}}"required/>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="cname" class="control-label col-lg-2">Nama Komunitas <span class="required">*</span></label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="namakom" name="namakom" minlength="5" type="text" required/>
+                                    <input class="form-control" id="nama_kom" name="nama_kom" minlength="5" type="text" 
+                                    value="{{ isset($data_kom) ? $data_kom->nama_kom : ''}}"required/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="cname" class="control-label col-lg-2"> Nama Provinsi <span class="required">*</span></label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="namaprov" name="namaprov" minlength="2" type="text" required/>
+                                    <input class="form-control" id="nama_prov" name="nama_prov" minlength="2" type="text" 
+                                    value="{{ isset($data_kom) ? $data_kom->nama_prov : ''}}"required/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="curl" class="control-label col-lg-2"> Nama Kabupaten/Kota <span class="required">*</span></label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="namakota" name="namakota" type="text" required/>
+                                    <input class="form-control" id="nama_kota" name="nama_kota" type="text" 
+                                    value="{{ isset($data_kom) ? $data_kom->nama_kota : ''}}"required/>
                                 </div>
                             </div>
                             <div class="form-group">

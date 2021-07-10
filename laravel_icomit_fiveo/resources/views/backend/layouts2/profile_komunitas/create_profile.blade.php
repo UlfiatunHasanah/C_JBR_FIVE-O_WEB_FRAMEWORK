@@ -39,16 +39,19 @@
                                 <form class="form-validate form-horizontal" id="profile_komunitas_form" method="POST"
                                             action="{{ route ('profile.store')}}" enctype="multipart/form-data">
                                             {!! csrf_field() !!}
+                                            {!! isset($profile_kom) ? method_field('PUT') : ''!!}
                                     <div class="form-group">
                                         <label for="cname" class="control-label col-lg-2">Nama Komunitas <span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <input class="form-control" id="namakom" name="namakom" minlength="5" type="text" required/>
+                                            <input class="form-control" id="namakom" name="namakom" minlength="5" type="text" 
+                                            value="{{ isset($profile_kom) ? $profile_kom->nama_kom : ''}}" required/>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="cname" class="control-label col-lg-2"> Nama Provinsi <span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <input class="form-control" id="namaprov" name="namaprov" minlength="2" type="text" required/>
+                                            <input class="form-control" id="namaprov" name="namaprov" minlength="2" type="text" 
+                                            value="{{ isset($profile_kom) ? $profile_kom->id_prov : ''}}"required/>
                                         </div>
                                     </div>
                                     <div class="form-group">
