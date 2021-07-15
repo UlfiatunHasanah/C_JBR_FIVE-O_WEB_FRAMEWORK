@@ -21,8 +21,14 @@ Route::group(['namespace' => 'App\Http\Controllers\frontend'], function () {
     Route::resource('landing', 'LandingController');
 });
 
-Route::get('/login', [App\Http\Controllers\frontend\LandingController::class, 'login']);
-Route::get('/register', [App\Http\Controllers\frontend\LandingController::class, 'register']);
+Route::get('/login', [App\Http\Controllers\backend\LoginController::class, 'login'])->name('login');
+Route::post('/postlogin', [App\Http\Controllers\backend\LoginController::class, 'postlogin'])->name('postlogin');
+Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout'])->name('logout');
+
+Route::get('/register', [App\Http\Controllers\backend\RegisterController::class, 'register'])->name('register');
+Route::post('/saveregister', [App\Http\Controllers\backend\RegisterController::class, 'saveregister'])->name('saveregister');
+
+Route::get('/faq', [App\Http\Controllers\frontend\LandingController::class, 'faq']);
 
 Route::get('/adminweb', [App\Http\Controllers\backend\DashboardController::class, 'adminweb']);
 Route::get('/adminkom', [App\Http\Controllers\backend\DashboardController::class, 'adminkom']);
@@ -43,14 +49,15 @@ Route::get('/adminweb/kabkot', [App\Http\Controllers\backend\KabkotController::c
 Route::get('/adminweb/kabkot/create', [App\Http\Controllers\backend\KabkotController::class, 'create'])->name('kabkot.create');
 Route::post('/adminweb/kabkot/store', [App\Http\Controllers\backend\KabkotController::class, 'store'])->name('kabkot.store');
 Route::get('/adminweb/kabkot/edit/{id_kabkot}', [App\Http\Controllers\backend\KabkotController::class, 'edit'])->name('kabkot.edit');
+Route::put('/adminweb/datakom/update/{id_kabkot}', [App\Http\Controllers\backend\KabkotController::class, 'update'])->name('kabkot.update');
 Route::delete('/adminweb/kabkot/{id_kabkot}', [App\Http\Controllers\backend\KabkotController::class, 'destroy'])->name('kabkot.destroy');
 
 Route::get('/adminweb/datakom', [App\Http\Controllers\backend\DatakomController::class, 'datakom'])->name('data_komunitas.datakom');
 Route::post('/adminweb/datakom/store', [App\Http\Controllers\backend\DatakomController::class, 'store'])->name('datakom.store');
 Route::get('/adminweb/datakom/create', [App\Http\Controllers\backend\DatakomController::class, 'create'])->name('datakom.create');
-Route::get('/adminweb/datakom/edit/{id_kom}', [App\Http\Controllers\backend\DatakomController::class, 'edit'])->name('admink.edit');
-Route::put('/adminweb/datakom/update/{id_kom}', [App\Http\Controllers\backend\DatakomController::class, 'update'])->name('admink.update');
-Route::delete('/adminweb/datakom/{id_kom}', [App\Http\Controllers\backend\DatakomController::class, 'destroy'])->name('admink.destroy');
+Route::get('/adminweb/datakom/edit/{id_kom}', [App\Http\Controllers\backend\DatakomController::class, 'edit'])->name('datakom.edit');
+Route::put('/adminweb/datakom/update/{id_kom}', [App\Http\Controllers\backend\DatakomController::class, 'update'])->name('datakoom.update');
+Route::delete('/adminweb/datakom/{id_kom}', [App\Http\Controllers\backend\DatakomController::class, 'destroy'])->name('datakom.destroy');
 
 Route::get('/adminweb/admink', [App\Http\Controllers\backend\AdminkomController::class, 'admink'])->name('admink');
 Route::get('/adminweb/admink/create', [App\Http\Controllers\backend\AdminkomController::class, 'create'])->name('admink.create');

@@ -46,6 +46,28 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'adminweb' => [
+            'driver' => 'session',
+            'provider' => 'adminweb',
+        ],
+
+        'apiadminweb' => [
+            'driver' => 'token',
+            'provider' => 'adminweb',
+            'hash' => false,
+        ],
+
+        'adminkom' => [
+            'driver' => 'session',
+            'provider' => 'adminkom',
+        ],
+
+        'apiadminkom' => [
+            'driver' => 'token',
+            'provider' => 'adminkom',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -67,6 +89,16 @@ return [
 
     'providers' => [
         'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+
+        'adminweb' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+
+        'adminkom' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],

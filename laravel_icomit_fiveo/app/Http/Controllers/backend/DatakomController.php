@@ -11,13 +11,21 @@ class DatakomController extends Controller
 {
     public function datakom()
     {
-        $datakom = DB::table('profile_kom')->get();
+        $datakom = DB::table('profile_kom')->join('provinsi','profile_kom.id_prov','=','provinsi.id_prov')->get();
         return view('backend.layouts.data_komunitas.data_komunitas', compact('datakom'));
     }
     public function create()
     {
         $datakom = null;
-        return view('backend.layouts.data_komunitas.create_datakom' , compact('datakom'));
+        $provinsi = DB::table('provinsi')->get();
+        $kab_kota = DB::table('kab_kota')->get();
+        $admink = DB::table('akun_admin_kom')->get();
+        $data = [
+            'provinsi' => $provinsi,
+            'kab_kota' => $kab_kota,
+            'akun_admin_kom' => $admink,
+        ];
+        return view('backend.layouts.data_komunitas.create_datakom' , $data, compact('datakom'));
     }
 
     public function edit($id_kom)
@@ -45,12 +53,12 @@ class DatakomController extends Controller
         DB::table('profile_kom') ->insert([
             'id_admin_kom' => $request ->id_admin_kom,
             'nama_kom' => $request ->nama_kom,
-            'id_prov' => $request ->nama_prov,
-            'id_kota' => $request ->nama_kota,
-            'th_berdiri' => $request ->thn_berdiri,
+            'id_prov' => $request ->id_prov,
+            'id_kabkot' => $request ->id_kabkot,
+            'th_berdiri' => $request ->th_berdiri,
             'jml_anggota' => $request ->jml_anggota,
-            'no_wa' => $request ->no_wa,
-            'instagram' => $request ->instagram,
+            'link_wa' => $request ->link_wa,
+            'link_ig' => $request ->link_ig,
             'desc_kom' => $request ->desc_kom,
             'logo_kom' => $photo,
         ]);
@@ -69,12 +77,12 @@ class DatakomController extends Controller
         DB::table('profile_kom') ->where('id_kom', $request ->id_kom)->update([
             'id_admin_kom' => $request ->id_admin_kom,
             'nama_kom' => $request ->nama_kom,
-            'id_prov' => $request ->nama_prov,
-            'id_kota' => $request ->nama_kota,
+            'id_prov' => $request ->id_prov,
+            'id_kabkot' => $request ->id_kabkot,
             'th_berdiri' => $request ->thn_berdiri,
             'jml_anggota' => $request ->jml_anggota,
-            'no_wa' => $request ->no_wa,
-            'instagram' => $request ->instagram,
+            'link_wa' => $request ->link_wa,
+            'link_ig' => $request ->link_ig,
             'desc_kom' => $request ->desc_kom,
             'logo_kom' => $photo,
         ]);

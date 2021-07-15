@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login Template</title>
+    <title>Form Register - icomit</title>
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -18,17 +18,18 @@
             <div class="card login-card">
                 <div class="row no-gutters">
                     <div class="col-md-5">
-                        <img src="{{ asset('frontend/login/assets/images/login.jpg') }}" alt="login"
+                        <img src="{{ asset('frontend/login/assets/images/login.png') }}" alt="login"
                             class="login-card-img">
                     </div>
                     <div class="col-md-7">
                         <div class="card-body">
-                            <div class="brand-wrapper">
+                            {{-- <div class="brand-wrapper">
                                 <img src="{{ asset('frontend/login/assets/images/logo.svg') }}" alt="logo"
                                     class="logo">
-                            </div>
-                            <p class="login-card-description">Sign into your account</p>
-                            <form action="#!">
+                            </div> --}}
+                            <p class="login-card-description">Form Register</p>
+                            <form method="POST" action="{{ route('saveregister') }}">
+                                {!! csrf_field() !!}
                                 <div class="form-group mb-1">
                                     <label for="email" class="sr-only">Email</label>
                                     <input type="email" name="email" id="email" class="form-control"
@@ -45,14 +46,14 @@
                                         placeholder="Password">
                                 </div>
                                 <div class="form-group mb-1">
-                                    <label for="ver_password" class="sr-only">Verifikasi Password</label>
-                                    <input type="password" name="ver_password" id="ver_password" class="form-control"
-                                        placeholder="Verifikasi Password">
+                                    <label for="level" class="sr-only">Level</label>
+                                    <select class="form-control" name="level" id="level"
+                                        placeholder="Level" required>
+                                        <option value="adminkom">Admin Komunitas</option>
+                                    </select>
                                 </div>
-                                <input name="register" id="register" class="btn btn-block login-btn mb-4" type="button"
-                                    value="Register">
+                                <button class="btn btn-block login-btn mb-4" type="submit">Register</button>
                             </form>
-                            <a href="#!" class="forgot-password-link">Lupa Kata Sandi?</a>
                             <p class="login-card-footer-text">Sudah punya akun? <a href="{{ url('login') }}"
                                     class="text-reset">Login</a></p>
                         </div>

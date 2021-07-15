@@ -37,66 +37,75 @@
                     <div class="panel-body">
                         <div class="form">
                             <form class="form-validate form-horizontal" id="data_komunitas_form" method="POST"
-                            ction="{{isset ($data_kom) ? route ('datakom.update', $data_kom->id_kom) : 
+                            action="{{isset ($data_kom) ? route ('datakom.update', $data_kom->id_kom) : 
                             url ('adminweb/datakom/store')}}" enctype="multipart/form-data">
                             {!! csrf_field() !!}
                             {!! isset($data_kom) ? method_field('PUT') : ''!!}
                             <div class="form-group">
                                 <label for="cname" class="control-label col-lg-2">Id Admin Komunitas<span class="required">*</span></label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="id_admin_kom" name="id_admin_kom" minlength="5" type="text" 
-                                    value="{{ isset($data_kom) ? $data_kom->id_admin_kom : ''}}"required/>
+                                    <select class="form-control" id="id_admin_kom" name="id_admin_kom">
+                                        @foreach ($akun_admin_kom as $item)
+                                        <option value="{{$item->id_admin_kom}}">{{$item->id_admin_kom}}.  {{$item->username}} </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="cname" class="control-label col-lg-2">Nama Komunitas <span class="required">*</span></label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="nama_kom" name="nama_kom" minlength="5" type="text" 
-                                    value="{{ isset($data_kom) ? $data_kom->nama_kom : ''}}"required/>
+                                    <input class="form-control" id="nama_kom" name="nama_kom" minlength="5" type="text" placeholder="Nama Komunitas"
+                                    value="{{ isset($data_kom) ? $profile_kom->nama_kom : ''}}"required/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="cname" class="control-label col-lg-2"> Nama Provinsi <span class="required">*</span></label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="nama_prov" name="nama_prov" minlength="2" type="text" 
-                                    value="{{ isset($data_kom) ? $data_kom->nama_prov : ''}}"required/>
+                                    <select class="form-control" id="id_prov" name="id_prov">
+                                        @foreach ($provinsi as $item)
+                                        <option value="{{$item->id_prov}}">{{$item->nama_prov}} </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="curl" class="control-label col-lg-2"> Nama Kabupaten/Kota <span class="required">*</span></label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="nama_kota" name="nama_kota" type="text" 
-                                    value="{{ isset($data_kom) ? $data_kom->nama_kota : ''}}"required/>
+                                    <select class="form-control" id="id_kabkot" name="id_kabkot">
+                                        @foreach ($kab_kota as $item)
+                                        <option value="{{$item->id_kabkot}}">{{$item->nama_kab_kota}} </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="curl" class="control-label col-lg-2"> Tahun Berdiri <span class="required">*</span></label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="thnberdiri" name="thnberdiri" type="text" required/>
+                                    <input class="form-control" id="th_berdiri" name="th_berdiri" type="text" placeholder="Tahun Berdiri" required/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="curl" class="control-label col-lg-2"> Jumlah Anggota <span class="required">*</span></label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="jmlanggota" name="jmlanggota" type="text" required/>
+                                    <input class="form-control" id="jml_anggota" name="jml_anggota" type="text" placeholder="Jumlah Anggota" required/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="curl" class="control-label col-lg-2"> Nomor WhatsApp <span class="required">*</span></label>
+                                <label for="curl" class="control-label col-lg-2"> Link WhatsApp <span class="required">*</span></label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="nowa" name="nowa" type="text" required/>
+                                    <input class="form-control" id="link_wa" name="link_wa" type="text" placeholder="Link WhatsApp" required/>Contoh : wa.me/6286749253627
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="curl" class="control-label col-lg-2"> Akun Instagram <span class="required">*</span></label>
+                                <label for="curl" class="control-label col-lg-2"> Link Instagram <span class="required">*</span></label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="instagram" name="instagram" type="text" required/>
+                                    <input class="form-control" id="link_ig" name="link_ig" type="text" placeholder="Link Akun Instagram" required/>Contoh : instagram.com/[nama akun ig]
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="curl" class="control-label col-lg-2"> Deskripsi <span class="required">*</span></label>
                                     <div class="col-lg-10">
-                                        <input class="form-control" id="desckom" name="desckom" type="text" required/>
+                                        <textarea class="form-control" id="desc_kom" name="desc_kom" type="text" placeholder="Deskripsi Komunitas" required></textarea>
                                     </div>
                             </div>
                             <div class="form-group">

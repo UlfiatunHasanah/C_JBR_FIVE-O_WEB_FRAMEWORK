@@ -37,7 +37,8 @@
                     <div class="panel-body">
                         <div class="form">
                             <form class="form-validate form-horizontal" id="data_kabkot_form" method="POST"
-                            action="{{ url ('adminweb/kabkot/store')}}" enctype="multipart/form-data">
+                            action="{{isset ($kab_kota) ? route ('kabkot.update', $kab_kota->id_kabkot) : 
+                            url ('adminweb/provinsi/store')}}" enctype="multipart/form-data">
                             {!! csrf_field() !!}
                             {!! isset($kab_kota) ? method_field('PUT') : ''!!}
                             <div class="form-group">
@@ -53,7 +54,7 @@
                                     class="required">*</span></label>
                                     <div class="col-lg-10">
                                         <select class="form-control" id="id_prov" name="id_prov" placeholder="--Pilih Provinsi--">
-                                            @foreach ((array) $kab_kota as $item)
+                                            @foreach ($provinsi as $item)
                                             <option value="{{$item->id_prov}}">{{$item->nama_prov}} </option>
                                             @endforeach
                                         </select>

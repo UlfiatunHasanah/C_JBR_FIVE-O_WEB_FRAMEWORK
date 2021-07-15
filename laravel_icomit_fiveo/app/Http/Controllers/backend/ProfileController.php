@@ -33,14 +33,14 @@ class ProfileController extends Controller
         
         DB::table('profile_kom') ->insert([
             'id_admin_kom' => $request -> id_admin_kom,
-            'nama_kom' => $request ->namakom,
-            'id_prov' => $request ->namaprov,
-            'id_kota' => $request ->namakota,
-            'th_berdiri' => $request ->thnberdiri,
-            'jml_anggota' => $request ->jmlanggota,
-            'no_wa' => $request ->nowa,
-            'instagram' => $request ->instagram,
-            'desc_kom' => $request ->desckom,
+            'nama_kom' => $request ->nama_kom,
+            'id_prov' => $request ->nama_prov,
+            'id_kota' => $request ->nama_kota,
+            'th_berdiri' => $request ->thn_berdiri,
+            'jml_anggota' => $request ->jml_anggota,
+            'link_wa' => $request ->link_wa,
+            'link_ig' => $request ->link_ig,
+            'desc_kom' => $request ->desc_kom,
             'logo_kom' => $photo,
         ]);
 

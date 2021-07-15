@@ -42,15 +42,15 @@
                                     @foreach ($kab_kota as $item)
                                         <tr>
                                             <td>{{$item->id_kabkot}}</td>
-                                            <td>{{$item->id_prov}}</td>
+                                            <td>{{$item->nama_prov}}</td>
                                             <td>{{$item->nama_kab_kota}}</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <form action="{{route ('kabkot.destroy', $item->id_kabkot)}}" method="POST">
-                                                    <a class="btn btn-warning" href="{ route('kabkot.edit', $item->id_kabkot)}}">
+                                                    <a class="btn btn-warning" href="{{ route('kabkot.edit', $item->id_kabkot)}}">
                                                         <i class="fa fa-edit"></i></a> 
                                                         @csrf
-                                                        @method('delete')
+                                                        @method('DELETE')
                                                         <button type="submit" class="btn btn-danger"
                                                         onclick="return confirm ('Apakah anda yakin ingin menghapus data ini ?')">
                                                     <i class="fa fa-trash-o"></i></button>

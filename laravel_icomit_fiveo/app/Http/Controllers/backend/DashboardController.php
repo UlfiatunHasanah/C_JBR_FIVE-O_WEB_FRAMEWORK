@@ -10,7 +10,7 @@ class DashboardController extends Controller
 
     public function adminweb()
     {
-        $dashboard = DB::table('profile_kom')->get();
+        $dashboard = DB::table('profile_kom')->join('provinsi','profile_kom.id_prov','=','provinsi.id_prov')->get();
         return view('backend.layouts.dashboard' , compact('dashboard'));
     }
 
@@ -18,4 +18,5 @@ class DashboardController extends Controller
     {
         return view('backend.layouts2.dashboard2');
     }
+
 }

@@ -8,7 +8,7 @@
     <meta name="author" content="" />
     <title>{{ config('app.name') }}</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{{ asset('frontend/assets/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('frontend/assets/logo-icomit.png') }}" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -22,8 +22,8 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="{{ asset('frontend/assets/img/navbar-logo.svg') }}"
-                    alt="..." /></a>
+            <a class="navbar-brand" href="#page-top"><img src="{{ asset('frontend/assets/logo-icomit.png') }}"
+                    alt="..." />     I-COMIT</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -34,8 +34,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('login') }}">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('faq') }}">FAQ</a></li>
                 </ul>
             </div>
         </div>
@@ -45,56 +44,56 @@
         <div class="container">
             <div class="masthead-subheading">Selamat Datang di Website Kami!</div>
             <div class="masthead-heading text-uppercase">Temukan Komunitas IT di Sekitar Anda</div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+            {{-- <a class="btn btn-primary btn-xl text-uppercase" href="#services">Ayo Mulai Mencari</a> --}}
         </div>
     </header>
     <!-- Services-->
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Are you ready?</h2>
+                <h2 class="section-heading text-uppercase">Ayo Mulai Mencari !!!</h2>
                 <h3 class="section-subheading text-muted">Silahkan masukkan nama provinsi dan kabupaten/kota yang anda
                     cari!</h3>
             </div>
 
             <center>
-            <div class="container">
-                <div class="row">
-                    <div class="form-group mb-2">
-                    <div class="col-6">
-                        <select name="select" class="form-control select1">
-                            <option value="1"> -- Pilih Provinsi --</option>
-                            <option value="2"> Provinsi Aceh</option>
-                        </select>
+                <div class="container">
+                    <div class="row">
+                        <div class="form-group mb-2">
+                            <div class="col-6">
+                                <select name="select" class="form-control select1">
+                                    <option value="1"> -- Pilih Provinsi --</option>
+                                    <option value="2"> Provinsi Aceh</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                </div>
+            </center>
+
+            <center>
+                <div class="row">
+                    <div class="form-group mb-3">
+                        <div class="col-6">
+                            <select name="select" class="form-control select2">
+                                <option value="1">-- Pilih Kabupaten/Kota --</option>
+                                <option value="2"> Provinsi Aceh</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </center>
 
-                <center>
-                <div class="row">
-                    <div class="form-group mb-3">
-                    <div class="col-6">
-                        <select name="select" class="form-control select2">
-                            <option value="1">-- Pilih Kabupaten/Kota --</option>
-                            <option value="2"> Provinsi Aceh</option>
-                        </select>
-                    </div>
-                </div>
-                </div>
-                </center>
 
+            <center><button type='button' class='btn btn-primary center-block'> Cari</button></center>
 
-                <center><button type='button' class='btn btn-primary center-block'> Cari</button></center>
-
-            </div>
+        </div>
     </section>
     <!-- About-->
     <section class="page-section" id="about">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">About</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h3 class="section-subheading text-muted">Macam-macam user website</h3>
             </div>
             <ul class="timeline">
                 <li>
@@ -102,13 +101,13 @@
                             src="{{ asset('frontend/assets/img/about/1.jpg') }}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>2009-2011</h4>
-                            <h4 class="subheading">Our Humble Beginnings</h4>
+                            <h4>User Public</h4>
+                            {{-- <h4 class="subheading">Our Humble Beginnings</h4> --}}
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-                                voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero
-                                unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                            <p class="text-muted">Pengguna yang hanya bisa mengakses landing page dari website ini.
+                                User public tidak perlu "sign in" dan "sign up" untuk menggunakan website ini
+                            </p>
                         </div>
                     </div>
                 </li>
@@ -117,13 +116,15 @@
                             src="{{ asset('frontend/assets/img/about/2.jpg') }}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>March 2011</h4>
-                            <h4 class="subheading">An Agency is Born</h4>
+                            <h4>Admin Komunitas</h4>
+                            {{-- <h4 class="subheading">An Agency is Born</h4> --}}
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-                                voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero
-                                unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                            <p class="text-muted">Pengguna yang menjadi partner kami. Dimana pengguna ini mendaftarkan
+                                komunitas nya dan mengelola profile komunitasnya. Pengguna ini perlu "sign up" dan "sign
+                                in"
+                                terlebih dahulu.
+                            </p>
                         </div>
                     </div>
                 </li>
@@ -132,39 +133,23 @@
                             src="{{ asset('frontend/assets/img/about/3.jpg') }}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>December 2015</h4>
-                            <h4 class="subheading">Transition to Full Service</h4>
+                            <h4>Admin Website</h4>
+                            {{-- <h4 class="subheading">Transition to Full Service</h4> --}}
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-                                voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero
-                                unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
-                            src="{{ asset('frontend/assets/img/about/4.jpg') }}" alt="..." /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>July 2020</h4>
-                            <h4 class="subheading">Phase Two Expansion</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-                                voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero
-                                unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                            <p class="text-muted">Pengguna yang akan mengelola website ini. Pengguna ini merupakan
+                                pengguna utama atau inti. Dimana ia akan mengakses dan mengelola semua data.</p>
                         </div>
                     </div>
                 </li>
                 <li class="timeline-inverted">
                     <div class="timeline-image">
                         <h4>
-                            Be Part
+                            Jadilah
                             <br />
-                            Of Our
+                            Bagian
                             <br />
-                            Story!
+                            Dari Kami!
                         </h4>
                     </div>
                 </li>
@@ -176,125 +161,59 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h3 class="section-subheading text-muted">Mahasiswa Teknik Informatika Politeknik Negeri Jember</h3>
             </div>
             <div class="row">
                 <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('frontend/assets/img/team/1.jpg') }}"
+                        <img class="mx-auto rounded-circle" src="{{ asset('frontend/assets/img/team/5.jpeg') }}"
                             alt="..." />
-                        <h4>Parveen Anand</h4>
+                        <h4>Naufal Akbar Kardieno</h4>
                         <p class="text-muted">Lead Designer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('frontend/assets/img/team/2.jpg') }}"
+                        <img class="mx-auto rounded-circle" src="{{ asset('frontend/assets/img/team/4.jpg') }}"
                             alt="..." />
-                        <h4>Diana Petersen</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('frontend/assets/img/team/3.jpg') }}"
-                            alt="..." />
-                        <h4>Larry Parker</h4>
+                        <h4>Ulfiatun Hasanah</h4>
                         <p class="text-muted">Lead Developer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="{{ asset('frontend/assets/img/team/6.jpeg') }}"
+                            alt="..." />
+                        <h4>Ezra Allannathaniel</h4>
+                        <p class="text-muted">Lead Marketer</p>
                     </div>
                 </div>
             </div>
-             <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('frontend/assets/img/team/3.jpg') }}"
-                            alt="..." />
-                        <h4>Syahbana Ramadhan</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
                         laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
-    <!-- Clients-->
-    <div class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                            src="{{ asset('frontend/assets/img/logos/microsoft.svg') }}" alt="..." /></a>
-                </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                            src="{{ asset('frontend/assets/img/logos/google.svg') }}" alt="..." /></a>
-                </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                            src="{{ asset('frontend/assets/img/logos/facebook.svg') }}" alt="..." /></a>
-                </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                            src="{{ asset('frontend/assets/img/logos/ibm.svg') }}" alt="..." /></a>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Contact-->
     <section class="page-section" id="contact">
         <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Contact Us</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            </div>
-            <form id="contactForm">
-                <div class="row align-items-stretch mb-5">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input class="form-control" id="name" type="text" placeholder="Your Name *"
-                                required="required" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" id="email" type="email" placeholder="Your Email *"
-                                required="required" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="form-group mb-md-0">
-                            <input class="form-control" id="phone" type="tel" placeholder="Your Phone *"
-                                required="required" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group form-group-textarea mb-md-0">
-                            <textarea class="form-control" id="message" placeholder="Your Message *"
-                                required="required"></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <div id="success"></div>
-                    <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Send
-                        Message</button>
-                </div>
-            </form>
+            {{-- <div class="text-center"> --}}
+            <h2 class="section-heading text-uppercase">HUBUNGI KAMI</h2><br />
+            <h4 class="section-subheading text-muted"> Person : Lead Designer</h4>
+            <h4 class="section-subheading text-muted"> Email : jason.akbar30@gmail.com</h4>
+            <h4 class="section-subheading text-muted"> Phone : (+62) 1232241981</h4><br />
+            <h4 class="section-subheading text-muted"> Person : Lead Developer</h4>
+            <h4 class="section-subheading text-muted"> Email : ulfiezafiekhasanah008@gmail.com</h4>
+            <h4 class="section-subheading text-muted"> Phone : (+62) 85749253627</h4><br />
+            <h4 class="section-subheading text-muted"> Person : Lead Marketer</h4>
+            <h4 class="section-subheading text-muted"> Email : ezra.alannathaniel19@gmail.com</h4>
+            <h4 class="section-subheading text-muted"> Phone : (+62) 85157815688</h4><br />
+            {{-- <hr class="line-center" width="40%" color="white"> --}}
+            {{-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> --}}
+            {{-- </div> --}}
         </div>
     </section>
     <!-- Footer-->
@@ -302,18 +221,17 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 text-lg-start">
-                    Copyright &copy; Your Website
+                    Copyright &copy; C_JBR_FIVEO_WEB
                     <!-- This script automatically adds the current year to your website footer-->
                     <!-- (credit: https://updateyourfooter.com/)-->
                     <script>
                         document.write(new Date().getFullYear());
-
                     </script>
                 </div>
                 <div class="col-lg-4 my-3 my-lg-0">
-                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
                     <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-whatsapp"></i></a>
                 </div>
                 <div class="col-lg-4 text-lg-end">
                     <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
@@ -322,253 +240,6 @@
             </div>
         </div>
     </footer>
-    <!-- Portfolio Modals-->
-    <!-- Portfolio item 1 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img
-                        src="{{ asset('frontend/assets/img/close-icon.svg') }}" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto"
-                                    src="{{ asset('frontend/assets/img/portfolio/1.jpg') }}" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
-                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-                                    nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Threads
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Illustration
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 2 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img
-                        src="{{ asset('frontend/assets/img/close-icon.svg') }}" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto"
-                                    src="{{ asset('frontend/assets/img/portfolio/2.jpg') }}" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
-                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-                                    nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Explore
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Graphic Design
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 3 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img
-                        src="{{ asset('frontend/assets/img/close-icon.svg') }}" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto"
-                                    src="{{ asset('frontend/assets/img/portfolio/3.jpg') }}" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
-                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-                                    nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Finish
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Identity
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 4 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img
-                        src="{{ asset('frontend/assets/img/close-icon.svg') }}" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto"
-                                    src="{{ asset('frontend/assets/img/portfolio/4.jpg') }}" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
-                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-                                    nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Lines
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Branding
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 5 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img
-                        src="{{ asset('frontend/assets/img/close-icon.svg') }}" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto"
-                                    src="{{ asset('frontend/assets/img/portfolio/5.jpg') }}" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
-                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-                                    nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Southwest
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Website Design
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 6 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img
-                        src="{{ asset('frontend/assets/img/close-icon.svg') }}" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto"
-                                    src="{{ asset('frontend/assets/img/portfolio/6.jpg') }}" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
-                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-                                    nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Window
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Photography
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->

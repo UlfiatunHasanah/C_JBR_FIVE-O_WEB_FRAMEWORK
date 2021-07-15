@@ -48,7 +48,7 @@
                                                     <a class="btn btn-warning" href="{{ route('provinsi.edit', $item->id_prov)}}">
                                                         <i class="fa fa-edit"></i></a> 
                                                         @csrf
-                                                        @method('delete')
+                                                        @method('DELETE')
                                                         <button type="submit" class="btn btn-danger"
                                                         onclick="return confirm ('Apakah anda yakin ingin menghapus data ini ?')">
                                                     <i class="fa fa-trash-o"></i></button>

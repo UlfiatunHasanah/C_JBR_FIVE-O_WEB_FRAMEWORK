@@ -31,16 +31,16 @@
                           <th><i class="fas fa-map-marker-alt"></i> Provinsi</th>
                           <th><i class="fas fa-map-marker-alt"></i> Kabupaten/Kota</th>
                           <th><i class="fas fa-user"></i> Jumlah Anggota</th>
-                          <th><i class="fas fa-phone"></i> No. WA</th>
+                          <th><i class="fas fa-paperclip"></i>Link WA</th>
                           <th><i class="fas fa-image"></i> Logo Komunitas</th>
                           @foreach ($dashboard as $item)
                       <tr>
                           <td>{{ $item->id_kom }}</td>
                           <td>{{ $item->nama_kom }}</td>
-                          <td>{{ $item->id_prov }}</td>
-                          <td>{{ $item->id_kota }}</td>
+                          <td>{{ $item->nama_prov }}</td>
+                          <td>{{ $item->id_kabkot }}</td>
                           <td>{{ $item->jml_anggota }}</td>
-                          <td>{{ $item->no_wa }}</td>
+                          <td>{{ $item->link_wa }}</td>
                           <td>{{ $item->logo_kom }}</td>
                       </tr>
                       @endforeach
