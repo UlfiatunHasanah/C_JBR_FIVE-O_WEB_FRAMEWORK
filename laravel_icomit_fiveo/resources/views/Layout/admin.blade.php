@@ -85,7 +85,7 @@
 								
 								
 								<li>
-									<a role="menuitem" tabindex="-1" href="/logout"><i class="fa fa-power-off"></i> Logout</a>
+									<a role="menuitem" tabindex="-1" href="{{url('/logout')}}"><i class="fa fa-power-off"></i> Logout</a>
 								</li>
 							</ul>
 						</div>

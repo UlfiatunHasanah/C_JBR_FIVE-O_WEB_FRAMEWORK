@@ -11,13 +11,13 @@
                                 <ul class="nav nav-main">
                                     
                                       <li >
-                                        <a href="/admin-home">
+                                        <a href="{{url('/admin-home')}}">
                                             <i class="fa fa-home" aria-hidden="true"></i>
                                             <span>Pendaftar Baru</span>
                                         </a>
                                     </li>
                                     <li class="nav-active" >
-                                        <a href="/admin-list">
+                                        <a href="{{url('/admin-list')}}">
                                             <i class="fa fa-sign-in" aria-hidden="true"></i>
                                             <span>Daftar Komunitas</span>
                                         </a>

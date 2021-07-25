@@ -34,7 +34,7 @@ class AdminController extends Controller
         $pengguna = pengguna::find($id); 
         $pengguna->delete();
 
-        return redirect ('/admin-home');
+        return redirect('/admin-home');
     }
 
 
@@ -46,7 +46,7 @@ class AdminController extends Controller
         $pengguna->status = 'Disetujui';
         $pengguna->save();
         
-        return redirect ('/admin-home');
+        return redirect('/admin-home');
     }
     
      public function list()
