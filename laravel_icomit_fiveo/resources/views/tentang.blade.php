@@ -35,13 +35,13 @@
             >
               <ul class="nav navbar-nav menu_nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="/kom">Komunitas</a>
+                  <a class="nav-link" href="{{url('/kom')}}">Komunitas</a>
                 </li>
                 <li  class="nav-item active">
-                  <a class="nav-link" href="/">Tentang ICOMIT</a>
+                  <a class="nav-link" href="{{url('/')}}">Tentang ICOMIT</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/bantuan">Bantuan</a>
+                  <a class="nav-link" href="{{url('/bantuan')}}">Bantuan</a>
                 </li>
               
                <li class="nav-item submenu dropdown">
@@ -56,10 +56,10 @@
                   >
                   <ul class="dropdown-menu">
                     <li class="nav-item">
-                      <a class="nav-link" href="/login">Masuk</a>
+                      <a class="nav-link" href="{{url('/login')}}">Masuk</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/daftar"
+                      <a class="nav-link" href="{{url('/daftar')}}"
                         >Daftar</a
                       >
                     </li>
