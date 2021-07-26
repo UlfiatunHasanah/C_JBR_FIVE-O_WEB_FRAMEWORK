@@ -14,7 +14,11 @@
                    <nav class="navbar navbar-expand-lg navbar-light">
                        <div class="container">
                            <!-- Brand and toggle get grouped for better mobile display -->
+<<<<<<< Updated upstream
                            <a class="navbar-brand logo_h" href="{{ url('/')}}"><img src="{{ url('1/img/1.png') }}" alt="" /></a>
+=======
+                           <a class="navbar-brand logo_h"><img src="{{ url('1/img/1.png') }}" alt="" /></a>
+>>>>>>> Stashed changes
                            <button class="navbar-toggler" type="button" data-toggle="collapse"
                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                aria-expanded="false" aria-label="Toggle navigation">

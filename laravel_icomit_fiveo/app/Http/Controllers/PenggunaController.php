@@ -43,8 +43,6 @@ public function kom(Request $request)
             
         }
 
-
-
         return view('user.komunitas',compact('pengguna','pengguna1'));
 }
 

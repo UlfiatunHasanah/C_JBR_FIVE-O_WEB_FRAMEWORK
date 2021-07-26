@@ -13,7 +13,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="/"
+            <a class="navbar-brand logo_h"
               ><img src="{{url('1/img/1.png')}}" alt=""
             /></a>
             <button
@@ -254,7 +254,7 @@
               <p class="designation">Lead Web Marketer</p>
               <div class="mb-4">
                 <p>
-                  (E41191784)</br>
+                  (E41191741)</br>
                   SEMESTER 4</br>
                   D4 TEKNIK INFORMATIKA
                 </p>

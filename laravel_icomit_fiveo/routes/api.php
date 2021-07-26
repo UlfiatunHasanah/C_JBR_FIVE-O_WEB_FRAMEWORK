@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\pengguna;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +20,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Landing Page//
+Route::get('/','ApiController@tentang');
+Route::get('/detailpengguna/{id}','ApiController@detail');
+Route::get('/kom','ApiController@guest');
+Route::get('/bantuan','ApiController@bantuan');

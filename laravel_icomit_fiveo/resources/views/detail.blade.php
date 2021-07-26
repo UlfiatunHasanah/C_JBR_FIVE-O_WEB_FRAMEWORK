@@ -14,7 +14,11 @@
                    <nav class="navbar navbar-expand-lg navbar-light">
                        <div class="container">
 
+<<<<<<< Updated upstream
                            <a class="navbar-brand logo_h" href="/"><img src="{{ url('1/img/1.png') }}" alt="" /></a>
+=======
+                           <a class="navbar-brand logo_h"><img src="{{ url('1/img/1.png') }}" alt="" /></a>
+>>>>>>> Stashed changes
                            <button class="navbar-toggler" type="button" data-toggle="collapse"
                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                aria-expanded="false" aria-label="Toggle navigation">

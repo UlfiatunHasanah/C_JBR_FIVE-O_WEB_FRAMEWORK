@@ -14,7 +14,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
            
-            <a class="navbar-brand logo_h" href="/"
+            <a class="navbar-brand logo_h"
               ><img src="{{url('1/img/1.png')}}" alt=""
             /></a>
             <button
@@ -36,13 +36,13 @@
             >
                 <ul class="nav navbar-nav menu_nav ml-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="/user-kom">Komunitas</a>
+                  <a class="nav-link" href="{{url('/user-kom')}}">Komunitas</a>
                 </li>
                 <li  class="nav-item ">
-                  <a class="nav-link" href="/home">Tentang ICOMIT</a>
+                  <a class="nav-link" href="{{url('/home')}}">Tentang ICOMIT</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/user-bantuan">Bantuan</a>
+                  <a class="nav-link" href="{{url('/user-bantuan')}}">Bantuan</a>
                 </li>
               
                 <li class="nav-item submenu dropdown">
@@ -57,10 +57,10 @@
                   >
                   <ul class="dropdown-menu">
                     <li class="nav-item">
-                      <a class="nav-link" href="/profil">Profil Komunitas</a>
+                      <a class="nav-link" href="{{url('/profil')}}">Profil Komunitas</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/logout"
+                      <a class="nav-link" href="{{url('/logout')}}"
                         >Logout</a
                       >
                     </li>
@@ -254,7 +254,7 @@
         
           <div class="d-grid  col-lg-12 ">
   
-  <a href="/kom" class="   btn primary-btn" >Kembali</a>
+  <a href="{{url('/kom')}}" class="   btn primary-btn" >Kembali</a>
   
               
               </div>
